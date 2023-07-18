@@ -64,7 +64,8 @@ console.log(div)
 const postCard = document.querySelector(".post");
 
 posts.forEach((element) => {
-postCard.innerHTML += `<div class="post__header">
+
+    postCard.innerHTML += `<div class="post__header">
     <div class="post-meta">                    
         <div class="post-meta__icon">
             <img class="profile-pic" src="${element.author.image}" alt="${element.author.name}">                    
@@ -88,9 +89,17 @@ postCard.innerHTML += `<div class="post__header">
             </a>
         </div>
         <div class="likes__counter">
-            Piace a <b id="like-counter-1" class="js-likes-counter">${element.likes}</b> persone
+            Piace a <b id="like-counter-${element.id}" class="js-likes-counter">${element.likes}</b> persone
         </div>
     </div> 
 </div>            
 </div>`;
-})
+
+document.querySelector(".like-button").addEventListener("click", function () {
+    document.querySelector(".js-likes-counter").innerHTML = element.likes++;
+});
+
+});
+
+
+

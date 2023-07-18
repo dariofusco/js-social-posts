@@ -59,12 +59,11 @@ const posts = [
 const div = document.createElement("div");
 div.className += "post";
 document.getElementById("container").appendChild(div)
-console.log(div)
-
-const postCard = document.querySelector(".post");
 
 posts.forEach((element) => {
-
+    
+    const postCard = document.querySelector(".post");
+    
     postCard.innerHTML += `<div class="post__header">
     <div class="post-meta">                    
         <div class="post-meta__icon">
@@ -95,9 +94,9 @@ posts.forEach((element) => {
 </div>            
 </div>`;
 
-document.querySelector(".like-button").addEventListener("click", function () {
-    document.querySelector(".js-likes-counter").innerHTML = element.likes++;
-});
+    postCard.querySelector(".js-like-button").addEventListener("click", function () {
+        postCard.querySelector(".js-likes-counter").innerHTML++;
+    });
 
 });
 
